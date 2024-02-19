@@ -1,124 +1,95 @@
-<div class="app-main__inner">
-    <div class="app-page-title">
-        <div class="page-title-wrapper">
-            <div class="page-title-heading">
-                <div class="page-title-icon">
-                    <i class="pe-7s-wallet icon-gradient bg-plum-plate">
-                    </i>
-                </div>
-                <div>Dashboard Warung
-                    <div class="page-title-subheading">...
-                    </div>
-                </div>
-            </div>
-            <div class="page-title-actions">
-                <button type="button" data-bs-toggle="tooltip" title="Example Tooltip" data-bs-placement="bottom" class="btn-shadow me-3 btn btn-dark">
-                    <i class="fa fa-star"></i>
-                </button>
-                <div class="d-inline-block dropdown">
-                    <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
-                        <span class="btn-icon-wrapper pe-2 opacity-7">
-                            <i class="fa fa-business-time fa-w-20"></i>
-                        </span>
-                        Transaksi
-                    </button>
-                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a href="javascript:void(0);" class="nav-link">
-                                    <i class="nav-link-icon lnr-inbox"></i>
-                                    <span>
-                                        BRI
-                                    </span>
-                                    <div class="ms-auto badge rounded-pill bg-secondary">86</div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript:void(0);" class="nav-link">
-                                    <i class="nav-link-icon lnr-book"></i>
-                                    <span>
-                                        PAYFAZZ
-                                    </span>
-                                    <div class="ms-auto badge rounded-pill bg-danger">5</div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript:void(0);" class="nav-link">
-                                    <i class="nav-link-icon lnr-picture"></i>
-                                    <span>
-                                        PAYOPAY
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a disabled href="javascript:void(0);" class="nav-link disabled">
-                                    <i class="nav-link-icon lnr-file-empty"></i>
-                                    <span>
-                                        CASH
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="">
-        <div class="row">
-            <div class="col-lg-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-night-fade">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Total Orders</div>
-                            <div class="widget-subheading">Last year expenses</div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>1896</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-arielle-smile">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Clients</div>
-                            <div class="widget-subheading">Total Clients Profit</div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>$ 568</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-premium-dark">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Products Sold</div>
-                            <div class="widget-subheading">Total revenue streams</div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-warning"><span>$14M</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-happy-green">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Followers</div>
-                            <div class="widget-subheading">People Interested</div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-dark"><span>46%</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <div class="divider mt-0" style="margin-bottom: 30px;"></div> -->
-</div>
+  <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+          <div class="container-fluid">
+              <div class="row mb-2">
+                  <div class="col-sm-6">
+                      <h1 class="m-0">Dashboard</h1>
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-6">
+                      <ol class="breadcrumb float-sm-right">
+                          <li class="breadcrumb-item"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item active">Dashboard v1</li>
+                      </ol>
+                  </div>
+                  <!-- /.col -->
+              </div>
+              <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+          <div class="container-fluid">
+              <!-- Small boxes (Stat box) -->
+              <div class="row">
+                  <div class="col-lg-3 col-6">
+                      <!-- small box -->
+                      <div class="small-box bg-info">
+                          <div class="inner">
+                              <h4>Rp. <?= number_format($saldo, 0, ',', '.'); ?>.-</h4>
+                              <p>BRI</p>
+                          </div>
+                          <div class="icon">
+                              <i class="ion ion-bag"></i>
+                          </div>
+                          <a href="<?= base_url('Admin/BRI/') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                      </div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-lg-3 col-6">
+                      <!-- small box -->
+                      <div class="small-box bg-success">
+                          <div class="inner">
+                              <h4>53<sup style="font-size: 20px">%</sup></h4>
+
+                              <p>PAY FAZZ</p>
+                          </div>
+                          <div class="icon">
+                              <i class="ion ion-stats-bars"></i>
+                          </div>
+                          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                      </div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-lg-3 col-6">
+                      <!-- small box -->
+                      <div class="small-box bg-warning">
+                          <div class="inner">
+                              <h4>44</h4>
+
+                              <p>PAYO PAY</p>
+                          </div>
+                          <div class="icon">
+                              <i class="ion ion-person-add"></i>
+                          </div>
+                          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                      </div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-lg-3 col-6">
+                      <!-- small box -->
+                      <div class="small-box bg-danger">
+                          <div class="inner">
+                              <h4>65</h4>
+
+                              <p>SALDO CASH</p>
+                          </div>
+                          <div class="icon">
+                              <i class="ion ion-pie-graph"></i>
+                          </div>
+                          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                      </div>
+                  </div>
+                  <!-- ./col -->
+              </div>
+              <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->

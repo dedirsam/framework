@@ -1,31 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Language" content="en">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Analytics Dashboard - This is an example dashboard created using build-in elements and components.</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
-    <meta name="msapplication-tap-highlight" content="no">
-    <link rel="icon" type="image/png" href="<?= base_url() ?>assets/images/favicon.ico" />
-    <!--
-    =========================================================
-    * ArchitectUI HTML Theme Dashboard - v4.0.0
-    =========================================================
-    * Product Page: https://dashboardpack.com
-    * Copyright 2023 DashboardPack (https://dashboardpack.com)
-    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
-    =========================================================
-    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    -->
-    <script defer src="<?= base_url() ?>assets/scripts/main.js"></script>
-    <script defer src="<?= base_url() ?>assets/scripts/demo.js"></script>
-    <script defer src="<?= base_url() ?>assets/scripts/toastr.js"></script>
-    <script defer src="<?= base_url() ?>assets/scripts/scrollbar.js"></script>
-    <script defer src="<?= base_url() ?>assets/scripts/fullcalendar.js"></script>
-    <script defer src="<?= base_url() ?>assets/scripts/maps.js"></script>
-    <script defer src="<?= base_url() ?>assets/scripts/chart_js.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?= $title; ?></title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/adminlte.min.css">
 </head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper">

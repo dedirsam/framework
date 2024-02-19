@@ -1,74 +1,93 @@
 <?= $this->extend($config->viewLayout) ?>
 <?= $this->section('main') ?>
+<div class="login-box">
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="<?= base_url('') ?>" class="h1"><b>Framework</b>LTE</a>
+        </div>
+        <div class="card-body">
+            <p class="login-box-msg"><?= lang('Auth.loginTitle') ?></p>
+            <?= view('App\Views\Auth\_message_block') ?>
+            <form action="<?= url_to('login') ?>" method="post">
+                <?= csrf_field() ?>
+                <?php if ($config->validFields === ['email']) : ?>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.email') ?>">
+                        <div class="invalid-feedback">
+                            <?= session('errors.login') ?>
+                        </div>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                <?php else : ?>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.emailOrUsername') ?>">
+                        <div class="invalid-feedback">
+                            <?= session('errors.login') ?>
+                        </div>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                                &nbsp; <small>or</small> &nbsp;
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <div class="input-group mb-3">
+                    <input type="password" name="password" class="form-control  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>">
+                    <div class="invalid-feedback">
+                        <?= session('errors.password') ?>
+                    </div>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php if ($config->allowRemembering) : ?>
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="remember" name="remember" <?php if (old('remember')) : ?> checked <?php endif ?>>
+                                <label for="remember">
+                                    <?= lang('Auth.rememberMe') ?>
+                                </label>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block"><?= lang('Auth.loginAction') ?></button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
 
-<div class="container">
-	<div class="row">
-		<div class="col-sm-6 offset-sm-3">
-
-			<div class="card">
-				<h2 class="card-header"><?=lang('Auth.loginTitle')?></h2>
-				<div class="card-body">
-
-					<?= view('App\Views\Auth\_message_block') ?>
-
-					<form action="<?= url_to('login') ?>" method="post">
-						<?= csrf_field() ?>
-
-<?php if ($config->validFields === ['email']): ?>
-						<div class="form-group">
-							<label for="login"><?=lang('Auth.email')?></label>
-							<input type="email" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"
-								   name="login" placeholder="<?=lang('Auth.email')?>">
-							<div class="invalid-feedback">
-								<?= session('errors.login') ?>
-							</div>
-						</div>
-<?php else: ?>
-						<div class="form-group">
-							<label for="login"><?=lang('Auth.emailOrUsername')?></label>
-							<input type="text" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"
-								   name="login" placeholder="<?=lang('Auth.emailOrUsername')?>">
-							<div class="invalid-feedback">
-								<?= session('errors.login') ?>
-							</div>
-						</div>
-<?php endif; ?>
-
-						<div class="form-group">
-							<label for="password"><?=lang('Auth.password')?></label>
-							<input type="password" name="password" class="form-control  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>">
-							<div class="invalid-feedback">
-								<?= session('errors.password') ?>
-							</div>
-						</div>
-
-<?php if ($config->allowRemembering): ?>
-						<div class="form-check">
-							<label class="form-check-label">
-								<input type="checkbox" name="remember" class="form-check-input" <?php if (old('remember')) : ?> checked <?php endif ?>>
-								<?=lang('Auth.rememberMe')?>
-							</label>
-						</div>
-<?php endif; ?>
-
-						<br>
-
-						<button type="submit" class="btn btn-primary btn-block"><?=lang('Auth.loginAction')?></button>
-					</form>
-
-					<hr>
-
-<?php if ($config->allowRegistration) : ?>
-					<p><a href="<?= url_to('register') ?>"><?=lang('Auth.needAnAccount')?></a></p>
-<?php endif; ?>
-<?php if ($config->activeResetter): ?>
-					<p><a href="<?= url_to('forgot') ?>"><?=lang('Auth.forgotYourPassword')?></a></p>
-<?php endif; ?>
-				</div>
-			</div>
-
-		</div>
-	</div>
+            <!-- <div class="social-auth-links text-center mt-2 mb-3">
+            <a href="#" class="btn btn-block btn-primary">
+                <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+            </a>
+            <a href="#" class="btn btn-block btn-danger">
+                <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+            </a>
+        </div> -->
+            <!-- /.social-auth-links -->
+            <?php if ($config->activeResetter) : ?>
+                <p class="mb-1">
+                    <a href="<?= url_to('forgot') ?>"><?= lang('Auth.forgotYourPassword') ?></a>
+                </p>
+            <?php endif; ?>
+            <?php if ($config->allowRegistration) : ?>
+                <p class="mb-0">
+                    <a href="<?= url_to('register') ?>" class="text-center"><?= lang('Auth.needAnAccount') ?></a>
+                </p>
+            <?php endif; ?>
+        </div>
+        <!-- /.card-body -->
+    </div>
 </div>
-
 <?= $this->endSection() ?>
